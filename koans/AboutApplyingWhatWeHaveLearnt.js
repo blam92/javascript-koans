@@ -55,13 +55,19 @@ describe("About Applying What We Have Learnt", function() {
       }
     }
     
-    expect(sum).toBe(FILL_ME_IN);
+    expect(sum).toBe(233168);
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
-    var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
+    var arrayLessThanAThousand = _.range(1000).filter(function(element) {
+    	return element % 3 === 0 || element % 5 === 0;
+    });
 
-    expect(233168).toBe(FILL_ME_IN);
+    var sum = _.reduce(arrayLessThanAThousand, function(memo, num) {
+    	return memo + num;
+    });    /* try chaining range() and reduce() */
+
+    expect(233168).toBe(sum);
   });
 
   /*********************************************************************************/
